@@ -1,0 +1,165 @@
+/* --------- >>> Estilo al Contenedor <<<< ----------------- */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: transparent
+
+  /* background-image: url(./assets/img/pngwing.com\ \(4\).png); */
+  /* background-repeat: no-repeat;
+  background-size: 35% auto;
+  background-position-x: 25%;
+  background-position-y: -15%; */
+  /* background-color: yellowgreen;
+  display: flex; */
+}
+
+.container{
+
+position: absolute;
+width: 100%;
+height: 100%;
+background-image: url(/src/assets/img/0NhgE3O.png);
+background-color: blue;
+}
+
+.form {
+  
+  align-items: center;
+  padding: 4.5em 3em;
+  position: absolute;
+  right: 0;
+  background-color: yellowgreen;
+  width: 38%; 
+  height: 100%;
+  box-shadow: -8px 5px 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.login {
+  font-size: 2.5rem;
+  margin-top: .3em;
+  text-align: center;
+  color: rgb(235, 235, 18);
+  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.login1 {
+  font-size: 1.2rem;
+  margin-top: 2em; 
+  font-family: 'Lucida Sans'
+}
+
+.login2 {
+  font-size: 1.1rem;
+  margin-top: 1.5em;
+  position: fixed;
+  left: 66%;
+}
+
+.form__container {
+  margin-top: 5.5em;
+  display: grid;
+  gap: 3em;
+}
+
+.form__gruop{
+  position: relative;
+  color: black;
+}
+
+.input{
+  width: 100%;
+  background: transparent;
+  color: black;
+  font-size: 1rem;
+  padding: .6em .4em;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 8px 8px 8px rgb(37, 37, 37);
+  outline: none;
+  font-size: 16px;
+  transition: all .3s;
+  border-bottom: 1px solid yellow;
+  border-right: 1px solid yellow;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 13px;
+}
+
+.input:focus {
+  border-bottom: 1px solid #20e2d7;
+  border-right: 1px solid #20e2d7;
+  padding: 10px;
+}
+
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label{
+  transform: translateY(-12px) scale(.7);
+  transform-origin: left top;
+  color: rgb(235, 235, 18);
+  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.label{
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  left: 55px;
+  transform: translateY(10px);
+  transition: transform .5s, color .3s;
+} 
+
+.error{
+  color: red;
+  position:absolute;
+  left: 11%;
+  font-size: .8em;
+  
+}
+
+.ojo{
+  /* font-size: .1rem; */
+  /* margin-top: 1.5em; */
+  position: fixed;
+  left: 94%;
+  top: 66%;
+  border: none;
+  background: transparent;
+}
+
+/* --------- >>> Estilo al Boton <<<< ----------------- */
+
+.btn {
+  position:fixed;
+  top: 79.5%;
+  left: 76.5%;
+  display:inline-block;
+  height: 40px;
+  width: 130px;
+  border-radius: 10px;
+  background-color:rgb(4, 218, 218);
+  color: white;
+  font-size: 15px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  transition: all, 500ms, ease;
+  border: 1px solid black;
+  outline: 2px solid rgb(235, 235, 18);
+  margin-bottom: 40px;
+  z-index: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.btn:hover{
+  background: #05c4ba;
+  box-shadow: 0 0 20px #20e2d7, 0 0 20px #20e2d7, 0 0 20px #20e2d7, 0 0 20px #20e2d7;
+  transition-delay: 0,5ms;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+  font-weight: 700;
+  cursor: pointer; 
+  letter-spacing: 2px;
+}

@@ -1,0 +1,10 @@
+.isActive {
+    color: chartreuse;
+    font-weight: 700;
+    padding: 2em 4em;  
+}
+
+.inActive {
+    color: rgb(245, 243, 243);
+    padding: 2em 4em;
+}
