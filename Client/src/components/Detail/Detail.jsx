@@ -12,12 +12,14 @@ function Detail() {
       axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
         if (data.name) {
         setCharDetail(data);
-      } else {
-         window.alert('No hay personajes con ese ID');
       }
-   });
-   return setCharDetail({});
-    },[id])
+    })
+    
+    .catch(err => alert(err.response.data.error));
+    
+    return setCharDetail({});      
+        
+},[id]);
     
   return <div>
     <h2>{charDetail.id}</h2>

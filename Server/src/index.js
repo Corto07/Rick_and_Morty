@@ -1,9 +1,9 @@
 const http = require("http");
 const fs = require("fs");
-const data = require("./utils/data")
+const data = require("./utils/data");
+const getCharById = require("./controllers/getCharById");
 
 const PORT = 3001;
-
 
 const server = http.createServer((req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -12,17 +12,8 @@ const server = http.createServer((req, res) => {
     const urlParts = req.url.split('/');
     const id = urlParts[urlParts.length - 1];
 
-    const character = data.find((character) => character.id === Number(id));
-    
-    if (character) {
-      res.writeHead(200, {'Content-Type': 'application/json'});
-      res.end(JSON.stringify(character));
-    } else {
-      res.writeHead(404, {'Content-Type': 'text/plain'});
-      res.end(JSON.stringify({ error: "Character not found" }));
-    }
-    return;
-  }
+    getCharById(res,id)     
+  };
 });
 
 
