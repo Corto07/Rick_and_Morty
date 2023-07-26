@@ -6,9 +6,9 @@ import style from "./Cards.module.css";
 export default function Cards({ characters, onClose }) {
   return (
     <div className={style.container}>
-      <div className={style.slider}>
+      {/* <div className={style.slider}>
         <Slider/>
-      </div>
+      </div> */}
     <div className={style.tarjetas}>
       {characters.map(
         ({ id, name, status, species, origin, gender, image, addFav, removeFav }) => (

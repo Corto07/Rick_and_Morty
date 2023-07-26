@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { addFav, removeFav } from '../../redux/action';
 import style from './Card.module.css';
 import { Link, useLocation } from 'react-router-dom';
-import { connect } from'react-redux'
+import { connect } from 'react-redux'
 
 
 const Card = ({id, name, status, species, origin, gender, image, onClose, addFav, removeFav, allCharacters}) => {

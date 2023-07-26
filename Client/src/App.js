@@ -11,45 +11,43 @@ import Error404 from "./components/Error404/Error404";
 import Form from "./components/Form/Form";
 import Favorites from "./components/Favorites/Favorites";
 
-function App() {
-    
-  const [ characters, setCharacters ] = useState([])
-    
+function App() {  
+  const { pathname } = useLocation();
   const navigate = useNavigate();
-    
+  const [ characters, setCharacters ] = useState([])
   const [access, setAccess] = useState (false)
-  const EMAIL = "claudiocarruz@gmail.com";
-  const PASSWORD = "123456";
   
-    const location = useLocation();
-    const isHome = location.pathname === "/";
+  const URL = 'http://localhost:3001/rickandmorty/'
 
-    function login (userData) {
-      // Verificar si la información de usuario coincide
-      if (userData.email === EMAIL && userData.password === PASSWORD) {
-        setAccess(true);
-        navigate('/home');
-     }
-    }  
+  async function login ({ email, password }){
+    try {
+        const {data} = await axios(`${URL}login?email=${email}&password=${password}`)
+        const { access } = data;
+        setAccess(access)
+        access && navigate('/home')
+    } catch ({ response }) {
+        const { data } = response
+        console.log(data);
+        alert(data.message)
+    }
+  }
 
-    useEffect(() => {
+  useEffect(() => {
       !access && navigate('/');
-   }, [access, navigate]);
+   }, [access]);
 
-  const onSearch = (id) => {
+   const onSearch = async (id) => {
     if(!id) alert('Ingresa un ID')
     if(characters.find(char => char.id === parseInt(id) )){
       alert(`Ya existe el personaje con el id ${id}`)
       return;
     }
-    // axios(`https://rickandmortyapi.com/api/character/${id}`)
-    axios(`http://localhost:3001/rickandmorty/character/${id}`)
-    .then(({data}) => {
-      if(data.name){
-        setCharacters((oldChars)=> [...oldChars, data])
-      }
-    })
-    .catch(err => alert(err.response.data.error))
+    try {
+    const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`);
+      setCharacters((oldChars)=> [...oldChars, data])
+    } catch(error){
+      alert(error.response.data)
+    }
   }
   
   function onClose(id){
@@ -57,9 +55,8 @@ function App() {
   }
   
   return (
-  
     <div className="App">
-        {!isHome && <Nav onSearch={onSearch}/>}
+        {pathname !== '/' && <Nav onSearch ={onSearch}/>}
       <Routes>
         <Route path = "/" element = {<Form login={login}/>}/>
         <Route path = "/home" element = {<Cards characters={characters} onClose={onClose}/>}/>
@@ -74,6 +71,7 @@ function App() {
 
 export default App;
 
+//  **** Peticion Tipo Fetch ****
 
 //   function onSearch(id) {
 //     fetch(`https://rickandmortyapi.com/api/character/${id}`)
@@ -86,3 +84,33 @@ export default App;
 //        }
 //     });
 //  }
+
+
+// **** Version Promises ****
+
+// const onSearch = (id) => {
+//   if(!id) alert('Ingresa un ID')
+//   if(characters.find(char => char.id === parseInt(id) )){
+//     alert(`Ya existe el personaje con el id ${id}`)
+//     return;
+//   }
+//   // axios(`https://rickandmortyapi.com/api/character/${id}`)
+//   axios(`http://localhost:3001/rickandmorty/character/${id}`)
+//   .then(({data}) => {
+//     if(data.name){
+//       setCharacters((oldChars)=> [...oldChars, data])
+//     }
+//   })
+//   .catch(err => alert(err.response.data.error))
+// }
+
+// **** Version Promises ****
+
+// function login({ email, password }){
+//   axios(`${URL}login?email=${email}&password=${password}`)
+//   .then(({data})=>{
+//     const { access } = data;
+//     setAccess(access)
+//     access && navigate('/home')
+//   })
+// }

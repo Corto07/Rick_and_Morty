@@ -1,29 +1,18 @@
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./action";
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "../redux/action";
 
 const initialState = {
   myFavorites: [],
   allCharacters: [],
 }
 
-const rootReducer = (state = initialState, {type, payload}) => {
-  switch (type) {
+function reducer (state = initialState, action, payload){
+  switch(action.type){
     case ADD_FAV:
-      return {
-        ...state,
-        myFavorites: [...state.myFavorites, payload],
-        allCharacters: [...state.allCharacters, payload]
-      };
+      return { ...state, myFavorites: action.payload, allCharacters: action.payload };
 
     case REMOVE_FAV:
-      let copy = state.myFavorites.filter((char) => {
-        return parseInt(char.id) !== parseInt(payload);
-      });
-        return {
-          ...state,
-          myFavorites: copy,
-          allCharacters: copy
-        }; 
-    
+      return { ...state, myFavorites: action.payload }
+
     case FILTER:
       let copyFilter = [...state.allCharacters];
         if (payload === "") {
@@ -48,10 +37,9 @@ const rootReducer = (state = initialState, {type, payload}) => {
             return payload === "A" ? a.id - b.id : b.id - a.id;
           })
         }
-
     default:
       return {...state};
     }
 };
 
-export default rootReducer;
+export default reducer;
