@@ -22,9 +22,10 @@ function App() {
   async function login ({ email, password }){
     try {
         const {data} = await axios(`${URL}login?email=${email}&password=${password}`)
+        console.log({data})
         const { access } = data;
-        setAccess(access)
-        access && navigate('/home')
+        setAccess(access);
+        access && navigate('/home');
     } catch ({ response }) {
         const { data } = response
         console.log(data);
