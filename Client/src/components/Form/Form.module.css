@@ -1,35 +1,37 @@
+/* --------- >>> Estilo de fuentes <<<< ----------------- */
+
+@font-face {
+  font-family: 'Merienda', cursive;
+  src: url(../../assets/fonts/Merienda-Black.ttf);
+  font-family: rick_and_morty;
+   src: url(../../assets/fonts/get_schwifty.ttf); 
+}
+
 /* --------- >>> Estilo al Contenedor <<<< ----------------- */
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: transparent
-
-  /* background-image: url(./assets/img/pngwing.com\ \(4\).png); */
-  /* background-repeat: no-repeat;
-  background-size: 35% auto;
-  background-position-x: 25%;
-  background-position-y: -15%; */
-  /* background-color: yellowgreen;
-  display: flex; */
+  background-color: rgb(172, 214, 88);
 }
 
 .container{
-
-position: absolute;
-width: 100%;
-height: 100%;
-background-image: url(/src/assets/img/0NhgE3O.png);
-background-color: blue;
+  position: absolute;
+  background-image: url(../../assets/img/Rick-And-Morty-Transparent-Background\ \(1\).png);
+  background-repeat: no-repeat;
+  background-position-y:bottom;
+  background-size: 60%;
+  width:100%;
+  height:100%;
 }
 
-.form {
-  
+.form {  
   align-items: center;
   padding: 4.5em 3em;
   position: absolute;
   right: 0;
-  background-color: yellowgreen;
+  background-color:rgb(4, 100, 85);
   width: 38%; 
   height: 100%;
   box-shadow: -8px 5px 15px rgba(0, 0, 0, 0.4);
@@ -37,45 +39,63 @@ background-color: blue;
 }
 
 .login {
-  font-size: 2.5rem;
-  margin-top: .3em;
+  font-size: 3rem;
+  font-family: 'Merienda', cursive;
   text-align: center;
-  color: rgb(235, 235, 18);
-  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+  text-shadow: 3px 3px 3px black;
+  background-color: linear-gradient(#1497be, #1c2aec);
+  color: transparent;
+  background-clip: none;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  animation: text 5s linear infinite;
+}
+
+@keyframes text {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
 
 .login1 {
   font-size: 1.2rem;
   margin-top: 2em; 
-  font-family: 'Lucida Sans'
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 0.5em blue, 0 0 0.5em blue;
+  font-family: 'Lucida Sans';
+  background-color:transparent;
 }
 
 .login2 {
   font-size: 1.1rem;
   margin-top: 1.5em;
-  position: fixed;
-  left: 66%;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 0.5em blue, 0 0 0.5em blue;
+  background-color:transparent;
 }
 
 .form__container {
-  margin-top: 5.5em;
+  margin-top: 2.8em;
   display: grid;
   gap: 3em;
+  background-color:transparent;
 }
 
 .form__gruop{
   position: relative;
-  color: black;
+  background-color:transparent;
 }
 
 .input{
   width: 100%;
-  background: transparent;
-  color: black;
+  background: rgb(4, 100, 85);;
+  color: white;
   font-size: 1rem;
   padding: .6em .4em;
   border: none;
-  border-radius: 8px;
   box-shadow: 8px 8px 8px rgb(37, 37, 37);
   outline: none;
   font-size: 16px;
@@ -83,7 +103,7 @@ background-color: blue;
   border-bottom: 1px solid yellow;
   border-right: 1px solid yellow;
   font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 13px;
+  background-color:rgb(4, 100, 85);
 }
 
 .input:focus {
@@ -103,31 +123,35 @@ background-color: blue;
 }
 
 .label{
-  color: black;
+  color: white;
   cursor: pointer;
   position: absolute;
   left: 55px;
   transform: translateY(10px);
   transition: transform .5s, color .3s;
+  background-color:transparent;
 } 
 
 .error{
   color: red;
   position:absolute;
+  margin-top: 12px;
   left: 11%;
   font-size: .8em;
-  
+  background-color:transparent;
 }
 
+
 .ojo{
-  /* font-size: .1rem; */
-  /* margin-top: 1.5em; */
+  font-size: 1.8rem;
+  color: black;
+  margin-top: 1.5em;
   position: fixed;
-  left: 94%;
-  top: 66%;
+  left: 93.5%;
+  top: 58.5%;
   border: none;
   background: transparent;
-}
+} 
 
 /* --------- >>> Estilo al Boton <<<< ----------------- */
 
@@ -140,7 +164,7 @@ background-color: blue;
   width: 130px;
   border-radius: 10px;
   background-color:rgb(4, 218, 218);
-  color: white;
+  color: black ;
   font-size: 15px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow: hidden;

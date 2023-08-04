@@ -34,11 +34,12 @@ function Form ({ login }) {
     const togglePasswordVisibility = () => {
       setShowPassword(!showPassword);
     };
-    
+      
     return (
-      <div className={style.container}>
+      <div className={style.container} >
+              
       <form onSubmit={handleSubmit} className={style.form}>
-      <h1 className={style.login}>Login</h1>
+      <h1 className={style.login}>Login...</h1>
       <h3 className={style.login1}>¡Hola! Te damos la Bienvenida a la App de Rick & Morty</h3>
       <p className={style.login2}>Completa tus datos y empeza a navegar...!</p>
       
@@ -69,8 +70,11 @@ function Form ({ login }) {
             <p className={style.error} style={{color:"red"}}>{errors.password}</p>
         </div>    
       </div>
-          <button type="button" className={style.ojo} onClick={togglePasswordVisibility}>{showPassword ? <FaEyeSlash /> : <FaEye />}</button>
-          <button type="submit" className={style.btn}>Submit</button>
+        
+          <button type="button" className={style.ojo} onClick={togglePasswordVisibility}>{showPassword ? <FaEye style={{ backgroundColor: 'rgb(4, 100, 85)'}}/> : <FaEyeSlash style={{ backgroundColor: 'rgb(4, 100, 85)'}}/>}</button>
+       
+          <button type="submit" className={style.btn}>Aceptar</button>
+       
     </form>
     </div>
     )
