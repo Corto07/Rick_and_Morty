@@ -1,27 +1,41 @@
-const axios = require('axios')
-const errorHandler = require("../utils/errors")
+const axios = require('axios');
 
-const URL_BASE = 'https://rickandmortyapi.com/api/character/'
+const URL = 'https://rickandmortyapi.com/api/character/';
 
-// **** Version asyncAwait ****
 const getCharById = async (req, res) => {
-    const id = parseInt(req.params.id)
-    
-    try {
-        const response = await axios(`${URL_BASE}${id}`);
-        
-        const { name, species, status, origin, image, gender } = response.data
+  // const { id } = req.params;
+  const id = parseInt(req.params.id);
 
-        const character = {id, name, species, status, origin, image, gender }
+  try {
+    const { data } = await axios(`${URL}${id}`);
 
-        return res.status(200).json(character)
-    
-    } catch(error) {
-        errorHandler(res,error)
-    }
-}
+    const {
+      name,
+      gender,
+      species,
+      origin: { name: origin },
+      image,
+      status,
+    } = data;
 
-module.exports = getCharById
+    const character = {
+      id,
+      name,
+      gender,
+      species,
+      origin,
+      image,
+      status,
+    };
+
+    return name
+      ? res.status(200).json(character)
+      : res.status(404).send('Not found');
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+module.exports = getCharById;
 
 
 // **** Version Promises ****

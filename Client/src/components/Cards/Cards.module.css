@@ -1,7 +1,6 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   background-color: transparent
 }
 
@@ -10,15 +9,17 @@
   padding-left: 2em;
   padding-right: 2em;
   width: 100%;
+  height: 100%;
   margin-top: 8em;
   margin-bottom: 2em;
   margin-left: 2em;
   margin-right: 2em;
+  /* background-image: url(../../assets/img/0NhgE3O.png); */
 }
 
 .tarjetas{
-  border: none;
-  /* position: relative; */
+  /* border: none; */
+  border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,6 +28,7 @@
   flex-wrap: wrap;
   padding-top: 2m;
   height:fit-content;
+  border:ridge #fbe4f2 5px;
   background-color: rgba(11, 87, 122, 0.671);
 }
 

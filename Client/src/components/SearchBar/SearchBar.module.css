@@ -1,14 +1,14 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   background-color: transparent
 }
 
 .divBotton {
   position: relative;
   align-items: center;
-  right: 10%;
+  right: 13%;
   background-color: transparent;
   width: 30%; 
   height: 35%;
@@ -53,7 +53,7 @@
   font-size: 1rem;
   padding: .7em;
   border: none;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   box-shadow: 8px 8px 8px rgb(37, 37, 37);
   outline: none;
   font-size: 16px;
@@ -82,9 +82,10 @@
 
   .label{
     color: white;
-    position: absolute;
     cursor: pointer;
+    position: absolute;
     left: 30px;
     transform: translateY(10px);
     transition: transform .5s, color .3s;
+    background-color:transparent;
   } 
