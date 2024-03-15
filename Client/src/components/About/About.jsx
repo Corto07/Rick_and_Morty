@@ -1,9 +1,15 @@
 import React from "react";
+import NavBar from "../NavBar/Navbar";
 
-function About() {
-  return <div>
-    <h1>Esta es la app de Rick & Morty. Creada por: "Claudio"</h1>
-  </div>;
+const About = () => {
+  return (
+    <>
+      <NavBar />
+      <div className="bg-red-500 mt-24 ">
+        <h1>Esta es la app de Rick & Morty. Creada por: "Claudio"</h1>  
+      </div>  
+    </>
+  )
 }
 
 export default About;

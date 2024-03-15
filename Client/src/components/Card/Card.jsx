@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { addFav, removeFav } from '../../redux/action';
-import style from './Card.module.css';
 import { Link, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux'
 
@@ -32,7 +31,7 @@ const Card = ({id, name, status, species, origin, gender, image, onClose, addFav
   }, [allCharacters]);
   
   return (
-    <div className={style.container}>
+    <div className="">
       {isFav ? 
         <button onClick={handleFavorite}>❤️</button>
         : <button onClick={handleFavorite}>🤍</button>

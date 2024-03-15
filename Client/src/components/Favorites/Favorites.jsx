@@ -4,21 +4,22 @@ import Card from '../Card/Card';
 import { filterCards, orderCards } from '../../redux/action';
 
 
-function Favorites({ myFavorites }) {
+const Favorites = ({ myFavorites }) => {
 
-const dispatch = useDispatch();
-const [aux, setAux] = useState (false);
+  const dispatch = useDispatch();
+  const [aux, setAux] = useState (false);
 
-const handleOrder = (e) => {  
-  dispatch(orderCards(e.target.value));
-  setAux(!aux);  
-};
+  const handleOrder = (e) => {  
+    dispatch(orderCards(e.target.value));
+    setAux(!aux);  
+  };
 
-const handleFilter = (e) => {
-  dispatch(filterCards(e.target.value)); 
-}
+  const handleFilter = (e) => {
+    dispatch(filterCards(e.target.value));  
+  }
 
-return <div>
+return (
+  <div>
     <div>
       <select onChange={handleOrder}>
         <option value="A" >Ascendente</option>
@@ -31,24 +32,26 @@ return <div>
         <option value="Genderless" >Genderless</option>
         <option value="unknown" >Unknown</option>
       </select>
-    </div>{
+    </div>
 
-    myFavorites.map((char)=>{
-      return(
-        <Card
-          key={char.id}
-          id={char.id}
-          name={char.name}
-          status={char.status}
-          species={char.species}
-          gender={char.gender}
-          origin={char.origin?.name}
-          image={char.image}
-          onClose={char.onClose}
-        />)
-      })
-  }</div>;
-}
+    <div>
+        {myFavorites.map((char) => (
+          <Card
+            key={char.id}
+            id={char.id}
+            name={char.name}
+            status={char.status}
+            species={char.species}
+            gender={char.gender}
+            origin={char.origin?.name}
+            image={char.image}
+            onClose={char.onClose}
+          />
+        ))}
+      </div>
+  </div>
+)
+};
 
 const mapStateToProps = (state) => {
   return {
