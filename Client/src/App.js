@@ -7,7 +7,8 @@ import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 import Error404 from "./components/Error404/Error404";
 import Home from "./components/Home/Home";
-import Favorites from "./components/Favorites/Favorites";
+// import Favorites from "./components/Favorites/Favorites";
+import FormCrear from "./components/FormCrear/FormCrear";
 
 function App() {  
   // const { pathname } = useLocation();
@@ -57,12 +58,12 @@ function App() {
     <div className="App">
       <Routes>
         <Route exact path = "/" element = {<Home />}/>
-        {/* <Route path = "/home" element = {<Slider />}/>
-        <Route path = "/cards" element={<Cards />}/> */}
+        {/* <Route path = "/cards" element={<Cards />}/> */}
         <Route path = "/about" element = {<About/>}/>
         <Route path = "/detail/:id" element = {<Detail/>}/>
         <Route path = "*" element = {<Error404/>}/>
-        <Route path = "/favorites" element = {<Favorites/>}/>
+        {/* <Route path = "/favorites" element = {<Favorites/>}/> */}
+        <Route path = "/form" element = {<FormCrear/>}/>
       </Routes>
     </div>
   );

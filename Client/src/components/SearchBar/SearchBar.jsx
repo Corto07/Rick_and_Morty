@@ -14,7 +14,7 @@ const SearchBar = ({ onSearch }) => {
     setId('') } 
    
   return (
-    <div className="flex relative justify-center items-center" 
+    <div className="flex relative justify-center items-center " 
       style={   
         { 
           background:
@@ -22,11 +22,11 @@ const SearchBar = ({ onSearch }) => {
           }
         } 
       >
-      <input className="text-white block w-72 text-center rounded border-0 bg-transparent px-3 outline-none"
+      <input className="text-white block w-72 text-center rounded  bg-transparent px-3 outline-none"
         type="text"
         name="Id" 
         id="Id"
-        placeholder="Ingresar N° del personaje - Ej: 34" 
+        placeholder="Search for Characters..." 
         value={id} 
         onChange={handleChange} 
         required/>

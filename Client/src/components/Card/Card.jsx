@@ -1,64 +1,51 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-import { addFav, removeFav } from '../../redux/action';
-import { Link, useLocation } from 'react-router-dom';
-import { connect } from 'react-redux'
+import React from "react";
+import { Link } from "react-router-dom";
 
+const Card = ({ page, results }) => {
+  let display;
 
-const Card = ({id, name, status, species, origin, gender, image, onClose, addFav, removeFav, allCharacters}) => {
-   
-  const [isFav, setIsFav] = useState(false);
-  const { pathname } = useLocation();
-  
-  const handleFavorite = () => {
-    if (isFav) {
-      setIsFav(false);
-        removeFav(id); // Llama a la función removeFav recibida por props con el id del personaje
-    } else {
-      setIsFav(true);
-        addFav({
-          id, name, status, species, origin, gender, image,
-        }); // Llama a la función addFav recibida por props con las props del componente
-    }
-  };
+  if (results) {
+    display = (
+      
+			<div className="flex flex-wrap">
+        {results.map((x) => {
+          let { id, image, name, status, location, species } = x;
 
-  useEffect(() => {
-    allCharacters?.forEach(fav => { 
-      if (fav.id === id) {
-        setIsFav(true);
-      }
-    })
-  }, [allCharacters]);
-  
-  return (
-    <div className="">
-      {isFav ? 
-        <button onClick={handleFavorite}>❤️</button>
-        : <button onClick={handleFavorite}>🤍</button>
-      }
-      {pathname === '/home' && <button onClick={()=>onClose(id)}>X</button>}
-      <h2>{id}</h2>
-      <Link to={`/detail/${id}`}><h2>{name}</h2></Link> 
-      <h2>{status}</h2>
-      <h2>{species}</h2>
-      <h2>{gender}</h2>
-      <h2>{origin}</h2>
-      <img src={image} alt={name} />
-    </div>
-  );
-}; 
+          return (
+            <div key={id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 p-4">  
+              
+              <div className="bg-gray-700 rounded-xl overflow-hidden">
+    
+                <Link to={`${page}${id}`} style={{ textDecoration: "none" }}>
+                  <img className="w-full h-auto rounded-t-xl shadow transition duration-700 hover:scale-105" src={image} alt="" />
+                </Link>
+                  
+                <div className="p-4">
+              	  <Link to={`${page}${id}`} style={{ textDecoration: "none" }}>
+                    <div className="text-xl text-white font-bold mb-4 hover:text-orange-600 transition-transform hover:scale-105 duration-500">{name}</div>
+                	</Link>
+                    <div className="text-sm text-gray-400 mb-1">Last known location</div>
+                    <div className="text-md text-white">{location.name}</div>
+                    </div>
+                    <div className={`flex items-center justify-center p-2 text-sm rounded-b-xl ${status === "Dead" ? "text-white bg-[red]" : (status === "Alive" ? "text-white bg-[green]" : "bg-gray-400")}`}>
+                         {status} <div className="ml-3 mr-3 w-2 h-2 rounded-full bg-gray-800 text-sm "> </div> <div className="text-sm text-white"> {species} </div>
+                </div>
+              
+							</div>
+            
+						</div>
+          );
+        })}
+      
+				</div>
+    
+		);
 
-const mapStateToProps = (state) => {
-  return {
-    allCharacters: state.allCharacters,
-  };
+  } else {
+    display = "No Characters Found :/";
+  }
+
+  return <>{display}</>;
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addFav: (personaje) => dispatch(addFav(personaje)),
-    removeFav: (id) => dispatch(removeFav(id)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
+export default Card;
