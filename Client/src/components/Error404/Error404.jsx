@@ -1,9 +1,13 @@
 import React from "react";
+import NavBar from "../NavBar/Navbar";
 
-function Error404() {
-  return <div>
-    <h1>Error404 😓 qué pena mi pastelito</h1>
-  </div>;
+const Error404 = () => {
+  return (
+  <>
+    <NavBar />
+    <h1 className="text-white">Error404 😓 qué pena mi pastelito</h1>
+  </>
+  )
 }
 
 export default Error404;

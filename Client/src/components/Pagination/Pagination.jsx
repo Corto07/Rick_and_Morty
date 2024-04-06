@@ -45,9 +45,9 @@ const Pagination = ({ pageNumber, info, updatePageNumber }) => {
         forcePage={pageNumber - 1}
         breakClassName="break-me"
         containerClassName="flex"
-        previousClassName={`m-1 px-4 py-2 bg-gray-700 rounded-md ${pageNumber === 1 ? 'bg-gray-300 pointer-events-none' : ''}`}
-        nextClassName={`m-1 px-4 py-2 bg-gray-700 rounded-md ${pageNumber === info?.pages ? 'bg-gray-300 pointer-events-none' : ''}`}
-        activeClassName="bg-green-800 text-white text-lg py-2 px-3 rounded-xl hover:bg-green-600"
+        previousClassName={`m-1 px-4 py-2 bg-gray-700 rounded-md ${pageNumber === 1 ? 'bg-gray-800 text-gray-500 pointer-events-none' : ''}`}
+        nextClassName={`m-1 px-4 py-2 bg-gray-700 rounded-md ${pageNumber === info?.pages ? 'bg-gray-800 text-gray-500 pointer-events-none' : ''}`}
+        activeClassName="bg-green-800 text-white text-lg py-2 px-4 rounded-xl hover:bg-green-600"
         marginPagesDisplayed={width < 576 ? 1 : 2}
         pageRangeDisplayed={width < 576 ? 1 : 2}
         pageCount={info?.pages}

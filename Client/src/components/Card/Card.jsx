@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import imageNoFound from "../../assets/img/RickyNoFound.png"
 
 const Card = ({ page, results }) => {
   let display;
@@ -42,7 +43,12 @@ const Card = ({ page, results }) => {
 		);
 
   } else {
-    display = "No Characters Found :/";
+    display = (
+      <div className="flex justify-center items-center flex-col text-center" >
+       <div className="font-bold text-3xl text-white font-MiFuente"> No Characters Found</div>
+        <img className="w-[50%] h-auto " src={imageNoFound} alt="Logo" />
+      </div>
+    );
   }
 
   return <>{display}</>;

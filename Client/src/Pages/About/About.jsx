@@ -3,29 +3,24 @@ import logoGithub from "../../assets/img/logoGithub.png";
 import logoGmail from "../../assets/img/logoGmail.png";
 import logoLinkedin from "../../assets/img/logoLinkedin.png";
 import logoWhatsapp from "../../assets/img/logoWhatsapp.png";
-import { Link } from "react-router-dom";
+import NavBar from "../../components/NavBar/Navbar";
 
-const Footer = () => {
+
+const About = () => {
   return (
-    <div className="w-full "
-    style={   
-      { 
-        background:
-        "linear-gradient(to right, #000000, gray, #000000)",
-        }
-      }   >
+    <>
+      <NavBar />
+      <div className="w-full h-[440px] relative "  
+      style={   
+        { 
+          background:
+          "linear-gradient(to right, #000000, #003400, #000000)",
+          }
+        }   
+        > 
+        <h1 className="mt-4 text-white text-xl">Esta es la app de Rick & Morty. Creada por: "Claudio"</h1>  
       
-      <div className="w-full h-20 lg:text-lg xs:text-ms flex flex-wrap justify-center ">
-       
-        <div className="p-3 w-1/2  lg:text-lg xs:text-ms text-left ">
-          <Link to="/about">
-          <h1 className="ml-14 text-gray-500 hover:text-blue-500">Realizado por Claudio Carruz</h1>
-          <h1 className="ml-14 text-gray-500">(8000) Bahía Blanca - Argentina</h1>
-          
-          </Link>
-        </div>
-      
-        <div className="w-1/2 flex justify-end items-center">
+      <div className="w-full mt-12 justify-end items-center">
           <a href="https://www.github.com/corto07" target="_blank" rel="noreferrer">
             <img className="flex w-16 h-16 p-2 rounded-t-xl shadow transition duration-500 hover:scale-110" src={logoGithub} alt="GitHub" />
           </a>
@@ -38,16 +33,12 @@ const Footer = () => {
             <a href="https://wa.me/+5492915032061" target="_blank" rel="noreferrer">
           <img className="flex w-16 h-16 p-2 rounded-t-xl shadow transition duration-500 hover:scale-110 mr-5" src={logoWhatsapp} alt="Whatsapp" />
           </a>
-        </div>
-      
       </div>
       
-        <div className="w-full p-3 bg-black lg:text-[14px] xs:text-xs">
-          <p className="items-center text-white">&copy; 2024 Rick and Morty | Todos los derechos reservados</p>
-        </div>
-
-    </div> 
+      </div>  
+      {/* <Footer /> */}
+    </>
   )
 }
 
-export default Footer;
+export default About;

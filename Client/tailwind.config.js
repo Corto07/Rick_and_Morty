@@ -4,6 +4,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/tw-elements/js/**/*.js"
   ],
   theme: {
     extend: {
@@ -37,5 +38,5 @@ export default {
       // => @media (min-width: 1536px) { ... }
     }
   },
-  plugins: [],
+  plugins: [require("tw-elements/plugin.cjs")],
 }

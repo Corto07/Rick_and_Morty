@@ -1,18 +1,10 @@
 import React from "react";
-import { useState } from "react";
 
-const SearchBar = ({ onSearch }) => {
-
-  const [id, setId] = useState('')
- 
-  function handleChange(evento){
-    setId(evento.target.value)
-  }
- 
-  const search = () => {
-    onSearch(id)
-    setId('') } 
-   
+const Search = ({ setSearch, updatePageNumber }) => {
+  let searchBtn = (e) => {
+    e.preventDefault();
+  };
+  
   return (
     <div className="flex relative justify-center items-center " 
       style={   
@@ -24,11 +16,13 @@ const SearchBar = ({ onSearch }) => {
       >
       <input className="text-white block w-72 text-center rounded  bg-transparent px-3 outline-none"
         type="text"
-        name="Id" 
-        id="Id"
+        name="name" 
+        id="name"
         placeholder="Search for Characters..." 
-        value={id} 
-        onChange={handleChange} 
+        onChange={(e) => {
+          updatePageNumber(1);
+          setSearch(e.target.value);
+        }}
         required/>
       
            
@@ -38,7 +32,7 @@ const SearchBar = ({ onSearch }) => {
       id="button-addon4"
       data-twe-ripple-init
       data-twe-ripple-color="light"
-      onClick={search}>
+      onClick={searchBtn}>
         <span className="[&>svg]:h-5 [&>svg]:w-5 bg-transparent hover:text-black transition-transform hover:scale-125 duration-500">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -58,4 +52,4 @@ const SearchBar = ({ onSearch }) => {
   );
 }
 
-export default SearchBar;
+export default Search;
