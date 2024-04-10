@@ -19,24 +19,24 @@ const Footer = () => {
        
         <div className="p-3 w-1/2  lg:text-lg xs:text-ms text-left ">
           <Link to="/about">
-          <h1 className="ml-14 text-gray-500 hover:text-blue-500">Realizado por Claudio Carruz</h1>
-          <h1 className="ml-14 text-gray-500">(8000) Bahía Blanca - Argentina</h1>
+          <h1 className="ml-14 text-gray-500 hover:text-blue-500">About Developer</h1>
+          {/* <h1 className="ml-14 text-gray-500">(8000) Bahía Blanca - Argentina</h1> */}
           
           </Link>
         </div>
       
         <div className="w-1/2 flex justify-end items-center">
           <a href="https://www.github.com/corto07" target="_blank" rel="noreferrer">
-            <img className="flex w-16 h-16 p-2 rounded-t-xl shadow transition duration-500 hover:scale-110" src={logoGithub} alt="GitHub" />
+            <img className="flex w-16 h-16 p-2 rounded-t-xl transition duration-500 hover:scale-110" src={logoGithub} alt="GitHub" />
           </a>
           <a href="https://mailto:claudiocarruz@gmail.com" target="_blank" rel="noreferrer">
-            <img className="flex w-16 h-16 p-2 rounded-t-xl shadow transition duration-500 hover:scale-110" src={logoGmail} alt="Gmail" />
+            <img className="flex w-16 h-16 p-2 rounded-t-xl transition duration-500 hover:scale-110" src={logoGmail} alt="Gmail" />
           </a>
             <a href="https://www.linkedin.com/in/claudio-carruz-24961256/" target="_blank" rel="noreferrer">
-          <img className="flex w-16 h-16 p-2 rounded-t-xl shadow transition duration-500 hover:scale-110" src={logoLinkedin} alt="Linkedin" />
+          <img className="flex w-16 h-16 p-2 rounded-t-xl transition duration-500 hover:scale-110" src={logoLinkedin} alt="Linkedin" />
           </a>
             <a href="https://wa.me/+5492915032061" target="_blank" rel="noreferrer">
-          <img className="flex w-16 h-16 p-2 rounded-t-xl shadow transition duration-500 hover:scale-110 mr-5" src={logoWhatsapp} alt="Whatsapp" />
+          <img className="flex w-16 h-16 p-2 rounded-t-xl transition duration-500 hover:scale-110 mr-14" src={logoWhatsapp} alt="Whatsapp" />
           </a>
         </div>
       

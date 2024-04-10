@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
-import InputGroup from "../../components/Filter/category/InputGroup";
+import InputGroup from "../../components/Filter/Category/InputGroup";
 import NavBar from "../../components/NavBar/Navbar";
 
 const Episodes = () => {
@@ -26,7 +26,7 @@ const Episodes = () => {
   }, [api]);
 
   return (
-    <div className="container"
+    <div className="w-full"
       style={   
         { 
           background:
@@ -58,7 +58,7 @@ const Episodes = () => {
             </div>
       </div>
         
-        <div className="w-full">
+        <div className="w-[90%] inline-flex flex flex-col pt-2">
           <div className="">
             <Card page="/episodes/" results={results} />
           </div>

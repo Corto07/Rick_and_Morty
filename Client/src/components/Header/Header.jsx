@@ -35,7 +35,7 @@ const Header = () => {
         > 
         <Search setSearch={setSearch} updatePageNumber={updatePageNumber}  />
       
-      <div className="flex flex-wrap w-[20%] inline-flex">
+      <div className="">
         <Filter
           pageNumber={pageNumber}
           status={status}
@@ -46,7 +46,7 @@ const Header = () => {
         />
       </div>
       
-      <div className="w-[80%] inline-flex flex flex-col ">
+      <div className="w-[93%] inline-flex flex flex-col ">
         <h1 className="text-4xl text-white text-center font-bold mt-6 mb-5">Characters</h1>
         
         <div className="w-full mt-2 mb-2">

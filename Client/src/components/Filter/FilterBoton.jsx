@@ -2,7 +2,7 @@ import React from "react";
 
 const FilterBTN = ({ input, task, updatePageNumber, index, name }) => {
   return (
-    <div>
+    <div className="relative">
       <style jsx>
         {`
           .x:checked + label {
@@ -17,7 +17,7 @@ const FilterBTN = ({ input, task, updatePageNumber, index, name }) => {
 
       <div className="form-check">
         <input
-          className="form-check-input x"
+          className="form-check-input x hidden"
           type="radio"
           name={name}
           id={`${name}-${index}`}
@@ -27,8 +27,8 @@ const FilterBTN = ({ input, task, updatePageNumber, index, name }) => {
             task(input);
             updatePageNumber(1);
           }}
-          className="btn btn-outline-primary"
-          for={`${name}-${index}`}
+          className="w-full flex border border-primary text-primary px-2 py-2 rounded hover:bg-primary hover:text-white transition ease-in-out duration-300 cursor-pointer"
+          htmlFor={`${name}-${index}`}
         >
           {input}
         </label>
@@ -38,3 +38,4 @@ const FilterBTN = ({ input, task, updatePageNumber, index, name }) => {
 };
 
 export default FilterBTN;
+
