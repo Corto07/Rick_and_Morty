@@ -15,15 +15,18 @@ const Footer = () => {
         }
       }   >
       
-      <div className="w-full h-20 lg:text-lg xs:text-ms flex flex-wrap justify-center ">
+      <div className="w-full md:h-20 xs:h-24 md:text-lg xs:text-ms md:flex md:flex-wrap md:justify-center
+      xs:flex xs:flex-wrap xs:justify-center ">
        
-        <div className="p-3 w-1/2 flex justify-start items-center lg:text-lg xs:text-ms text-left ">
+        <div className="flex md:p-3 md:mt-0 md:w-1/2 md:justify-start md:items-center md:text-lg md:text-left 
+                        xs:w-full xs:justify-center xs:items-center xs:mt-2 ">
           <Link to="/about">
-            <h1 className="flex ml-14 text-gray-500 hover:text-blue-500 hover:underline">About Developer</h1>        
+            <h1 className="flex md:ml-14 xs:text-black md:text-gray-500 hover:text-blue-500 hover:underline">About Developer</h1>        
           </Link>
         </div>
       
-        <div className="w-1/2 flex justify-end items-center">
+        <div className="md:w-1/2 md:flex md:justify-end md:items-center
+                        xs:w-full xs:flex xs:justify-center xs:items-center">
           <a href="https://www.github.com/corto07" target="_blank" rel="noreferrer">
             <img className="flex w-16 h-16 p-2 rounded-t-xl transition duration-500 hover:scale-110" src={logoGithub} alt="GitHub" />
           </a>
@@ -34,14 +37,14 @@ const Footer = () => {
           <img className="flex w-16 h-16 p-2 rounded-t-xl transition duration-500 hover:scale-110" src={logoLinkedin} alt="Linkedin" />
           </a>
             <a href="https://wa.me/+5492915032061" target="_blank" rel="noreferrer">
-          <img className="flex w-16 h-16 p-2 rounded-t-xl transition duration-500 hover:scale-110 mr-14" src={logoWhatsapp} alt="Whatsapp" />
+          <img className="flex w-16 h-16 p-2 rounded-t-xl transition duration-500 hover:scale-110 md:mr-14" src={logoWhatsapp} alt="Whatsapp" />
           </a>
         </div>
       
       </div>
       
         <div className="w-full p-3 bg-black lg:text-[14px] xs:text-xs">
-          <p className="items-center text-white">&copy; 2024 Rick and Morty | Todos los derechos reservados</p>
+          <p className="items-center text-white">&copy; 2024 Rick and Morty | Copyright</p>
         </div>
 
     </div> 

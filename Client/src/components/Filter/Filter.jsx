@@ -36,7 +36,9 @@ const Filter = ({ updatePageNumber, updateStatus, updateGender, updateSpecies,})
             <div className="w-full mb-2 flex justify-end items-center">
               {filtersSelected && (  
                 <img 
-                  className="w-[10%] mr-20 transition duration-500 hover:scale-110"
+                  className="xl:w-[10%] lg:w-[12%] md:w-[15%] sm:w-[20%] xsl:w-[25%] xsm:w-[25%] xs:w-[25%]
+                            xl:mr-20 lg:mr-16 lg:mr-14 md:mr-12 sm:mr-10 xsl:mr-7 xsm:mr-1 xs:mr-2
+                            transition duration-500 hover:scale-110"
                   src={logoClean} 
                   alt="Clear Filter"
                   onClick={clear}

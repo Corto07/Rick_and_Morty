@@ -70,11 +70,11 @@ const Location = () => {
           </span>
         </h1>
         
-        <div className="flex justify-center items-center mb-8 ">
-          <h5 className="flex-col text-center text-xl text-white">Dimension : {" "}
+        <div className="sm:flex justify-center items-center mb-8 ">
+          <h5 className="sm:flex-col text-center text-xl text-white">Dimension : {" "}
             <span className="text-gray-400 text-xl">{dimension === "" ? "Unknown" : dimension}</span>
           </h5>
-          <h6 className="ml-6 text-center text-xl text-white">Type : {" "} 
+          <h6 className="sm:ml-6 text-center text-xl text-white">Type : {" "} 
             <span className="text-gray-400 text-xl">{type === "" ? "Unknown" : type}</span>
           </h6>
         </div>
@@ -94,7 +94,7 @@ const Location = () => {
             <button
               onClick={scrollToTop}
               id='irArriba'>
-                <img className="z-50 w-32 h-auto fixed bottom-8 right-5 flex xs:p-3 md:p-3 lg:p-3 xl:p-5 transition duration-500 hover:scale-110 cursor-pointer inline-block "
+                <img className="z-50 w-32 h-auto fixed bottom-8 xs:right-2 md:right-5 flex xs:p-5 md:p-5 transition duration-500 hover:scale-110 cursor-pointer inline-block "
                   src={sendUp}
                   alt="Send Up"
                   title="Click to Up"

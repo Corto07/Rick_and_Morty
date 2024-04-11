@@ -88,7 +88,7 @@ const Episodes = () => {
             <button
               onClick={scrollToTop}
               id='irArriba'>
-                <img className="z-50 w-32 h-auto fixed bottom-8 right-5 flex xs:p-3 md:p-3 lg:p-3 xl:p-5 transition duration-500 hover:scale-110 cursor-pointer inline-block "
+                <img className="z-50 w-32 h-auto fixed bottom-8 xs:right-2 md:right-5 flex xs:p-5 md:p-5 transition duration-500 hover:scale-110 cursor-pointer inline-block "
                   src={sendUp}
                   alt="Send Up"
                   title="Click to Up"
