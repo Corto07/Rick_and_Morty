@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
 import NavBar from "../../components/NavBar/Navbar";
 import InputGroup from "../../components/Filter/Category/InputGroup";
+import sendUp from "../../assets/img/sendUp.png"
 
 const Location = () => {
   let [results, setResults] = React.useState([]);
@@ -25,6 +26,30 @@ const Location = () => {
     })();
   }, [api]);
 
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 200) { // Cambia 100 parar desplazarse antes de mostrar el botón
+      setShowButton(true);
+    } else {
+      setShowButton(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="w-full"
       style={   
@@ -45,11 +70,11 @@ const Location = () => {
           </span>
         </h1>
         
-        <div class="flex justify-center items-center mb-8 ">
-          <h5 class="flex-col text-center text-xl text-white">Dimension : {" "}
+        <div className="flex justify-center items-center mb-8 ">
+          <h5 className="flex-col text-center text-xl text-white">Dimension : {" "}
             <span className="text-gray-400 text-xl">{dimension === "" ? "Unknown" : dimension}</span>
           </h5>
-          <h6 class="ml-6 text-center text-xl text-white">Type : {" "} 
+          <h6 className="ml-6 text-center text-xl text-white">Type : {" "} 
             <span className="text-gray-400 text-xl">{type === "" ? "Unknown" : type}</span>
           </h6>
         </div>
@@ -59,9 +84,23 @@ const Location = () => {
       <div className="">
         <div className="w-full flex justify-center items-center">
           <h4 className="text-center mb-3 text-white text-lg flex-col">Pick Location</h4>
-          <div class="ml-4">
+          <div className="ml-4">
             <InputGroup name="Location" changeID={setNumber} total={126} />
           </div>
+        </div>
+
+        <div>
+          {showButton && (
+            <button
+              onClick={scrollToTop}
+              id='irArriba'>
+                <img className="z-50 w-32 h-auto fixed bottom-8 right-5 flex xs:p-3 md:p-3 lg:p-3 xl:p-5 transition duration-500 hover:scale-110 cursor-pointer inline-block "
+                  src={sendUp}
+                  alt="Send Up"
+                  title="Click to Up"
+                /> 
+            </button>
+          )}
         </div>
 
         <div className="w-[90%] inline-flex flex flex-col pt-2">

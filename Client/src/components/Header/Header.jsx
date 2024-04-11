@@ -62,7 +62,6 @@ const Header = () => {
             <Card page="/" results={results} />
           </div>
         </div>
-
       </div>
     </div>
   )

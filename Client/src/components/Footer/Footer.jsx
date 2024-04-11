@@ -17,11 +17,9 @@ const Footer = () => {
       
       <div className="w-full h-20 lg:text-lg xs:text-ms flex flex-wrap justify-center ">
        
-        <div className="p-3 w-1/2  lg:text-lg xs:text-ms text-left ">
+        <div className="p-3 w-1/2 flex justify-start items-center lg:text-lg xs:text-ms text-left ">
           <Link to="/about">
-          <h1 className="ml-14 text-gray-500 hover:text-blue-500">About Developer</h1>
-          {/* <h1 className="ml-14 text-gray-500">(8000) Bahía Blanca - Argentina</h1> */}
-          
+            <h1 className="flex ml-14 text-gray-500 hover:text-blue-500 hover:underline">About Developer</h1>        
           </Link>
         </div>
       

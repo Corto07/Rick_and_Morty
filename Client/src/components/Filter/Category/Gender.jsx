@@ -11,9 +11,9 @@ const Gender = ({ updateGender, updatePageNumber }) => {
   return (
     <div id="accordion" className="w-[90%] mx-2">
       <div  className="bg-transparent text-white">
-        <h2 class="mb-0" id="headingOne5">
+        <h2 className="mb-0" id="headingOne5">
           <button
-            className="group flex w-full px-4 py-2 text-base text-white transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-transparent [&:not([data-twe-collapse-collapsed])]:text-primary "
+            className="group flex w-full border border-white rounded-xl px-4 py-2 text-base transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none [&:not([data-twe-collapse-collapsed])]:bg-transparent [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:border-transparent"
             type="button"
             data-twe-collapse-init
             data-twe-collapse-collapsed
@@ -28,20 +28,20 @@ const Gender = ({ updateGender, updatePageNumber }) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor">
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
               </svg>
           </span>
           </button>
         </h2>
 
-        <div className="p-4"
+        <div
           id="collapseThree5"
-          class="!visible hidden"
+          className="!visible hidden p-4"
           data-twe-collapse-item
           aria-labelledby="headingThree5">
 

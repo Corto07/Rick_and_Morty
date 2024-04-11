@@ -1,11 +1,12 @@
 import React from "react";
 import NavBar from "../NavBar/Navbar";
+import imgError from "../../assets/img/error404.png"
 
 const Error404 = () => {
   return (
   <>
     <NavBar />
-    <h1 className="text-white">Error404 😓 qué pena mi pastelito</h1>
+      <img className="mt-6" src={imgError} alt="Error404"/>
   </>
   )
 }
