@@ -48,16 +48,16 @@ const NavBar = () => {
       </div>
       {menuOpen && ( 
         <div className="sm:hidden absolute right-0 top-8 border border-white rounded-2xl bg-white bg-opacity-80">
-        <Link to="/"  className="block pt-2 pb-2 px-12 rounded-t-2xl text-black hover:bg-gray-800" >
+        <Link to="/"  className="block pt-2 pb-2 px-12 rounded-t-2xl text-black hover:text-white hover:bg-gray-800" >
           Characters
         </Link>
-        <Link to="/location" className="block pt-2 pb-2 text-black hover:bg-gray-800" >
+        <Link to="/location" className="block pt-2 pb-2 text-black hover:text-white hover:bg-gray-800" >
           Location
         </Link>
-        <Link to="/episodes" className="block pt-2 pb-2 text-black hover:bg-gray-800" >
+        <Link to="/episodes" className="block pt-2 pb-2 text-black hover:text-white hover:bg-gray-800" >
           Episodes
         </Link>
-        <Link to="/form" className="block pt-2 pb-2 rounded-b-2xl text-black hover:bg-gray-800" >
+        <Link to="/form" className="block pt-2 pb-2 rounded-b-2xl text-black hover:text-white hover:bg-gray-800" >
           Create Character
         </Link>
       </div>
